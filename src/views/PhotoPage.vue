@@ -26,7 +26,7 @@
           input-id="show-fav-photo"
           @change="onCheckboxChange()"
         />
-        <label for="show-fav-photo">Favourite Photos</label>
+        <label for="show-fav-photo">Favourite Photos </label>
       </div>
 
       <div class="switch-button-field">
