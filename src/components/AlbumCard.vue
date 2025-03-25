@@ -1,5 +1,7 @@
 <template>
-  <Card style="width: 25rem; overflow: hidden">
+  <Card
+    style="width: 20rem; overflow: hidden; box-shadow: none; border-radius: 0"
+  >
     <template #header>
       <Image
         v-if="hasCoverPhotoUrl"
@@ -8,7 +10,6 @@
         width="250"
         preview
       >
-        {{ previewPhotos }}
         <template #preview>
           <div @click.stop>
             <Galleria
@@ -34,31 +35,33 @@
           </div>
         </template>
       </Image>
-      <div v-else class="add-photo-box">add first photo</div>
+      <div v-else class="add-photo-box" @click="openAlbumDialog">
+        <i class="pi pi-plus"></i>
+        <span>add first photo</span>
+      </div>
     </template>
     <template #title>{{ title }}</template>
     <template #footer>
       <div class="flex gap-4 mt-1">
-        {{ id }}
         <Button
-          label="Delete"
-          severity="secondary"
-          outlined
-          class="w-full"
+          icon="pi pi-trash"
+          severity="help"
+          variant="text"
+          rounded
           @click="deleteAlbum"
         />
         <Button
-          label="Actions"
-          severity="secondary"
-          outlined
-          class="w-full"
+          icon="pi pi-pencil"
+          severity="help"
+          variant="text"
+          rounded
           @click="openAlbumDialog"
         />
         <Button
-          label="go to album"
-          severity="secondary"
-          outlined
-          class="w-full"
+          icon="pi pi-eye"
+          severity="help"
+          variant="text"
+          rounded
           @click="redirectToAlbum"
         />
       </div>
@@ -130,6 +133,17 @@ const redirectToAlbum = () => {
   height: 215px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border: 1px dashed black;
+  width: 250px;
+  height: 180px;
+  flex-direction: column;
+  gap: 16px;
+  cursor: pointer;
+}
+:deep(.p-card-header) {
+  display: flex;
   justify-content: center;
 }
 </style>

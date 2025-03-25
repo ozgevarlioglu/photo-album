@@ -2,13 +2,19 @@ body {
   .p-toast {
     top: 150px !important;
   }
-  // --p-button-primary-background: #ff5733;
-  //--p-button-primary-border-color
-  // --p-toggle-handle-color: #ff5733;
-  // --p-toggleswitch-focus-ring-color: #ff5733;
-  // --p-toggleswitch-checked-background: #ff5733;
-  // --p-toggleswitch-checked-hover-background: #ff5733;
+  --p-button-primary-background: #a855f7;
+  --p-button-primary-border-color: #a855f7;
+  --p-button-primary-hover-background: #6921ac;
+  --p-button-primary-hover-border-color: #6921ac;
+  --p-toggleswitch-checked-background: #a855f7;
+  --p-toggleswitch-checked-hover-background: #6921ac;
+  --p-tabs-tab-active-border-color: #b686e4;
+  --p-tabs-tab-active-color: #b686e4;
+  --p-tabs-active-bar-background: #b686e4;
 }
 
 body * {
+  .p-button {
+    border-radius: 25px;
+  }
 }

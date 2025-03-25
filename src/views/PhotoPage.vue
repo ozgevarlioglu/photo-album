@@ -16,8 +16,9 @@
     <div class="filter-container">
       <Button
         label="Add Photo"
-        size="large"
+        size="small"
         class="add-button"
+        icon="pi pi-plus"
         @click="addPhoto"
       />
       <div class="checkbox-field">
@@ -227,8 +228,53 @@ const showMessage = (status, message) => {
 
 .gallery-mode-photos-section {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 sütun */
+  grid-template-columns: repeat(4, 1fr);
   padding: 16px;
+}
+
+@media (max-width: 1200px) {
+  .edit-mode-photos-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .edit-mode-photos-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .edit-mode-photos-section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #photo-page {
+    margin-top: 120px;
+  }
+  .filter-container {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start !important;
+  }
+  .p-select {
+    width: 100% !important;
+    order: 2;
+  }
+  .checkbox-field {
+    width: 100% !important;
+  }
+  .p-select {
+    order: 1;
+  }
+  .switch-button-field {
+    order: 2;
+  }
+  .checkbox-field {
+    order: 3;
+  }
+  .p-button {
+    order: 4;
+  }
 }
 
 .gallery-mode-photos-section img {

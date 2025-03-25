@@ -1,9 +1,9 @@
 <template>
   <div class="album-page">
-    <h1>Albums Page</h1>
+    <h2 class="page-title">My Albums</h2>
     <Button
       label="Add Album"
-      size="large"
+      size="small"
       class="add-button"
       @click="openAlbumDialog({})"
     />
@@ -21,7 +21,7 @@
       />
     </div>
     <div v-else class="no-albums">
-      <h2>Let's create your first album to keep your memory alive :)</h2>
+      <h3>Let's create your first album to keep your memory alive :)</h3>
       <img src="../assets/no-result.webp" alt="No albums found" />
     </div>
     <AlbumDialog
@@ -84,9 +84,38 @@ const showMessage = (status, message) => {
 .album-page {
   position: absolute;
   top: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
 }
 .albums-section {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 16px;
+}
+
+@media (max-width: 1200px) {
+  .albums-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .albums-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .albums-section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.page-title {
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 </style>

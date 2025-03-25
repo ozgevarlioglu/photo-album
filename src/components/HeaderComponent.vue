@@ -1,17 +1,19 @@
 <template>
   <header class="header">
     <div class="header-left">
-      <h1>memoria</h1>
-      <img src="../assets/camera.png" alt="memoria logo" class="logo" />
+      <div class="title-area">
+        <h1>memoria</h1>
+        <img src="../assets/camera.png" alt="memoria logo" class="logo" />
+      </div>
+      <Button
+        label="My Albums"
+        text
+        plain
+        icon="pi pi-folder"
+        class="add-button"
+        @click="redirectAlbumPage"
+      />
     </div>
-    <Button
-      label="My Albums"
-      text
-      plain
-      icon="pi pi-folder"
-      class="add-button"
-      @click="redirectAlbumPage"
-    />
     <div class="header-right">
       <Avatar
         label="V"
@@ -32,7 +34,7 @@ const redirectAlbumPage = () => {
   router.push({ name: "albums" });
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
 .header {
   display: flex;
   justify-content: space-between;
@@ -47,11 +49,51 @@ const redirectAlbumPage = () => {
 }
 .header-left {
   display: flex;
+  align-items: center;
   gap: 16px;
+}
+
+:deep(.p-button-label) {
+  font-weight: 600;
+}
+
+.title-area {
+  display: flex;
+  gap: 16px;
+  align-items: center;
 }
 .logo {
   width: 64px;
   height: 64px;
+}
+@media (max-width: 480px) {
+  .header-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    flex-direction: column;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  .title-area {
+    gap: 8px;
+  }
+  .logo {
+    width: 24px;
+    height: 24px;
+  }
+  .p-avatar {
+    width: 32px;
+    height: 32px;
+  }
+  .p-button {
+    padding-left: 0;
+  }
+  :deep(.p-button-label) {
+    font-size: 0.75rem;
+  }
 }
 </style>
 ```
