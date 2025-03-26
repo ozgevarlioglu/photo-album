@@ -38,8 +38,8 @@
 import { ref, onMounted, computed } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
-import AlbumCard from "@/components/AlbumCard.vue";
-import AlbumDialog from "@/components/AlbumDialog.vue";
+import AlbumCard from "@/components/Album/AlbumCard.vue";
+import AlbumDialog from "@/components/Album/AlbumDialog.vue";
 import Button from "primevue/button";
 import Toast from "primevue/toast";
 import { useToast } from "primevue/usetoast";

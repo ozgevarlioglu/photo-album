@@ -3,7 +3,7 @@
     <div class="header-left">
       <div class="title-area">
         <h1>memoria</h1>
-        <img src="../assets/camera.png" alt="memoria logo" class="logo" />
+        <img src="../../assets/camera.png" alt="memoria logo" class="logo" />
       </div>
       <Button
         label="My Albums"
