@@ -16,7 +16,7 @@
     </div>
     <div class="header-right">
       <Avatar
-        label="V"
+        :label="avatarLabel"
         class="mr-2"
         size="large"
         shape="circle"
@@ -29,7 +29,16 @@
 import Avatar from "primevue/avatar";
 import Button from "primevue/button";
 import { useRouter } from "vue-router";
+import { computed } from "vue";
+import { useStore } from "vuex";
+
 const router = useRouter();
+const store = useStore();
+
+const avatarLabel = computed(() => {
+  return store.state.user.user?.name?.charAt(0).toUpperCase();
+});
+
 const redirectAlbumPage = () => {
   router.push({ name: "albums" });
 };

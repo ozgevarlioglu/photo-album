@@ -1,9 +1,21 @@
 <script>
+import { onMounted } from "vue";
+import { useStore } from "vuex";
 import HeaderComponent from "@/components/HeaderComponent.vue";
+
 export default {
   name: "App",
   components: {
     HeaderComponent, // Header bileşenini kaydet
+  },
+  setup() {
+    const store = useStore();
+
+    onMounted(() => {
+      store.dispatch("user/loadUser");
+    });
+
+    return {};
   },
 };
 </script>
