@@ -122,17 +122,12 @@ const photos = computed(() => {
 });
 
 const filteredPhotos = computed(() => {
-  console.log("filtered");
   let result = photos.value;
-  console.log("🚀 ~ filteredPhotos ~ result:", result);
 
-  console.log("🚀 ~ filteredPhotos ~ showFavPhotos:", showFavPhotos);
-  // Eğer "Favourite Photos" seçiliyse sadece isFavourite === true olanları filtrele
   if (showFavPhotos.value) {
     result = result.filter((photo) => photo.isFavourite);
   }
 
-  // Eğer bir arama sorgusu varsa, başlığa göre filtrele
   if (searchQuery.value) {
     result = result.filter((photo) =>
       photo.title.toLowerCase().includes(searchQuery.value.toLowerCase()),
@@ -164,11 +159,6 @@ watch(selectedAlbum, (newAlbum) => {
     store.dispatch("photo/loadPhotosByAlbumId", newAlbum.id);
     searchQuery.value = "";
   }
-});
-
-watch(showFavPhotos, (newVal, oldVal) => {
-  console.log("🚀 ~ watch ~ oldVal:", oldVal);
-  console.log("🚀 ~ watch ~ newVal:", newVal);
 });
 
 const initialize = async (albumId) => {
