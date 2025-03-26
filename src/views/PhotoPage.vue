@@ -105,7 +105,7 @@ const toast = useToast();
 
 onMounted(async () => {
   await store.dispatch("album/loadAlbums");
-  const albumId = Number(route.query.albumId);
+  const albumId = Number(route.query.id);
   await initialize(albumId);
 });
 
@@ -153,7 +153,7 @@ const editMode = ref(true);
 
 watch(selectedAlbum, (newAlbum) => {
   if (newAlbum) {
-    router.push({ query: { albumId: newAlbum.id } });
+    router.push({ query: { id: newAlbum.id } });
     const album = store.state.album.albums.find(
       (album) => album.id === newAlbum.id,
     );

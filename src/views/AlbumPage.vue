@@ -66,8 +66,8 @@ const openAlbumDialog = (album) => {
   showAlbumDialog.value = true;
 };
 
-const redirectToAlbum = (albumId) => {
-  router.push({ path: "/photos", query: { albumId } });
+const redirectToAlbum = (id) => {
+  router.push({ path: "/photos", query: { id } });
 };
 
 const showMessage = (status, message) => {
