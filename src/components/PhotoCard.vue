@@ -79,9 +79,7 @@ const favStatus = ref(isFavourite.value);
 
 const deletePhoto = async () => {
   const response = await store.dispatch("photo/deletePhoto", props.id);
-  console.log("🚀 ~ deletePhoto ~ response:", response);
   if (response) {
-    console.log("if ");
     emits("show-toast-message", "success", "photo deleted successfully");
   } else {
     emits("show-toast-message", "error", "failed to delete photo");
