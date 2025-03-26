@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default {
-  namespaced: true, // Modülün namespaced olduğunu belirtir
+  namespaced: true,
   state: {
     albums: [],
     albumPhotos: [],

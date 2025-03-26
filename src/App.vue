@@ -6,7 +6,7 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
 export default {
   name: "App",
   components: {
-    HeaderComponent, // Header bileşenini kaydet
+    HeaderComponent,
   },
   setup() {
     const store = useStore();

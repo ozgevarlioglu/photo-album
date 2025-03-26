@@ -4,14 +4,12 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "plugin:vue/vue3-recommended", // Vue 3 için önerilen stiller
+    "plugin:vue/vue3-recommended",
     "eslint:recommended",
-    "plugin:prettier/recommended", // Prettier ile birlikte çalışır
+    "plugin:prettier/recommended",
   ],
   parserOptions: {
     ecmaVersion: 12,
   },
-  rules: {
-    // Buraya kendi kurallarınızı ekleyebilirsiniz
-  },
+  rules: {},
 };
