@@ -13,6 +13,9 @@ Search functionality based on album titles
 Mobile-responsive design
 User-friendly interface
 
+## Demo Link
+https://drive.google.com/file/d/1kYXweycabUWQTtCjhEnhVhqjztNSOtSR/view?usp=sharing
+
 ## Project setup
 
 ```
