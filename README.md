@@ -1,12 +1,9 @@
 # photo-album
 
-# Project Title
-Gallery Album Website
-
-# Project Description
+## Project Description
 This project is a gallery album website where users can upload and view their photos. Users can create albums, add album titles, and manage their photos. 
 
-# Features
+## Features
 Create and edit albums
 Upload and view photos
 Add photos to favorites
